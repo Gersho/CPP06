@@ -6,7 +6,7 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 14:19:02 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/15 15:43:52 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 15:58:55 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ int	main(void)
 	identify(mysterious_ptr);
 	std::cout << "Calling: void identify(Base& p)" << std::endl;
 	identify(mysterious_ref);
+	delete (mysterious_ptr);
 }
 
 
