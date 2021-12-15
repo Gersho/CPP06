@@ -1,10 +1,10 @@
-SRCS		= HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+SRCS		= main.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
 DEPS			= $(SRCS:.cpp=.d)
 
-NAME			= violence
+NAME			= convert
 CC				= clang++
 CFLAGS			= --std=c++98 -Wall -Wextra -Werror
 
