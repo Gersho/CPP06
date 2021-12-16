@@ -6,9 +6,17 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:28:40 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/15 16:34:23 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/16 14:56:27 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <cstdlib>
+
+int main(int ac, char **av)
+{
+	double	input;
+	std::atof
+}
 
 /*
 
