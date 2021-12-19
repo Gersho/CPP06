@@ -6,16 +6,36 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:28:40 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/16 14:56:27 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/19 16:55:58 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
+#include <cctype>
+#include <iostream>
 
 int main(int ac, char **av)
 {
+	if (ac != 2)
+	{
+		std::cout << "Wrong number of arguments." << std::endl;
+		return (-1);
+	}
 	double	input;
-	std::atof
+	if (std::isalpha(av[1][0]) && !av[1][1])
+		input = static_cast<char>(av[1][0]);
+	else
+		input = std::atof(av[1]);
+
+//need handle impossible AND non printable differently
+	std::cout << "char: ";
+	if (std::isprint(static_cast<char>(input)))
+		std::cout << static_cast<char>(input) << std::endl;
+	else
+		std::cout << "impossible." << std::endl;
+	std::cout << "int: " << static_cast<int>(input) << std::endl;
+	std::cout << "float: " << static_cast<float>(input) << std::endl;
+	std::cout << "double: " << static_cast<double>(input) << std::endl;
 }
 
 /*
