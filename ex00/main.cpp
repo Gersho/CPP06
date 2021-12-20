@@ -6,16 +6,14 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:28:40 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/20 13:13:21 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 15:43:58 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <cctype>
 #include <iostream>
-// #include <cmath>
-#include <math.h>
-
+#include <cmath>
 
 int main(int ac, char **av)
 {
@@ -28,7 +26,7 @@ int main(int ac, char **av)
 	char	c;
 	int		i;
 	float	f;
-	if (std::isalpha(av[1][0]) && !av[1][1])
+	if (std::isprint(av[1][0]) && !av[1][1])
 		input = static_cast<double>(av[1][0]);
 	else
 		input = std::atof(av[1]);
@@ -38,7 +36,7 @@ int main(int ac, char **av)
 	f = static_cast<float>(input);
 
 	std::cout << "char: ";
-	if (isnan(input) || isinf(input))
+	if (std::isnan(input) || std::isinf(input))
 		std::cout << "impossible." << std::endl;
 	else if (!std::isprint(c))
 		std::cout << "non displayable." << std::endl;
@@ -46,14 +44,16 @@ int main(int ac, char **av)
 		std::cout << static_cast<char>(input) << std::endl;
 		
 	std::cout << "int: ";
-	if (isnan(input) || isinf(input) || input != i)
+	if (std::isnan(input) || std::isinf(input) || input > INT_MAX || input < INT_MIN)
 		std::cout << "impossible." << std::endl;
 	else
 		std::cout << static_cast<int>(input) << std::endl;
 
 	std::cout << "float: " << static_cast<float>(input);
-	if (isnan(input) || isinf(input))
+	if (std::isnan(input) || std::isinf(input))
 		std::cout << "f";
+	else
+		std::cout << ".0f";
 	std::cout << std::endl;
 
 	std::cout << "double: " << static_cast<double>(input) << std::endl;
