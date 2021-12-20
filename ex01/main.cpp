@@ -6,11 +6,10 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 15:47:16 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/15 16:10:39 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 13:14:39 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
 #include <iostream>
 
 class Data
@@ -19,7 +18,6 @@ class Data
 
 	int		num;
 };
-
 
 uintptr_t serialize(Data* ptr)
 {

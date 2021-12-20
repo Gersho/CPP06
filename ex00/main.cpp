@@ -6,13 +6,16 @@
 /*   By: kzennoun <kzennoun@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:28:40 by kzennoun          #+#    #+#             */
-/*   Updated: 2021/12/19 16:55:58 by kzennoun         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 13:13:21 by kzennoun         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <cctype>
 #include <iostream>
+// #include <cmath>
+#include <math.h>
+
 
 int main(int ac, char **av)
 {
@@ -22,19 +25,37 @@ int main(int ac, char **av)
 		return (-1);
 	}
 	double	input;
+	char	c;
+	int		i;
+	float	f;
 	if (std::isalpha(av[1][0]) && !av[1][1])
-		input = static_cast<char>(av[1][0]);
+		input = static_cast<double>(av[1][0]);
 	else
 		input = std::atof(av[1]);
 
-//need handle impossible AND non printable differently
+	c = static_cast<char>(input);
+	i = static_cast<int>(input);
+	f = static_cast<float>(input);
+
 	std::cout << "char: ";
-	if (std::isprint(static_cast<char>(input)))
-		std::cout << static_cast<char>(input) << std::endl;
-	else
+	if (isnan(input) || isinf(input))
 		std::cout << "impossible." << std::endl;
-	std::cout << "int: " << static_cast<int>(input) << std::endl;
-	std::cout << "float: " << static_cast<float>(input) << std::endl;
+	else if (!std::isprint(c))
+		std::cout << "non displayable." << std::endl;
+	else
+		std::cout << static_cast<char>(input) << std::endl;
+		
+	std::cout << "int: ";
+	if (isnan(input) || isinf(input) || input != i)
+		std::cout << "impossible." << std::endl;
+	else
+		std::cout << static_cast<int>(input) << std::endl;
+
+	std::cout << "float: " << static_cast<float>(input);
+	if (isnan(input) || isinf(input))
+		std::cout << "f";
+	std::cout << std::endl;
+
 	std::cout << "double: " << static_cast<double>(input) << std::endl;
 }
 
